@@ -1,6 +1,6 @@
-const {$chema, model} = require('mongoose')
+const {Schema, model} = require('mongoose')
 
-const User = new $chema({
+const User = new Schema({
     username: {type: String, unique: true, required: true},
     password: {type: String, required: true}
 })

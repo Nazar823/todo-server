@@ -4,7 +4,7 @@ const PORT = 5000
 const mongoose = require('mongoose')
 const app = express()
 app.use(express.json())
-const apiRoutes = require('./Routes/routes')
+const apiRoutes = require('./Routes/Routes')
 app.use('/', apiRoutes)
 
 const uri = mongoose.connect(
