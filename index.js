@@ -1,10 +1,11 @@
-const express = require('express')
+ const express = require('express')
 const bodyParser = require('body-parser')  // анализ входящих запросов
 const PORT = 5000
 const mongoose = require('mongoose')
 const app = express()
 app.use(express.json())
 const apiRoutes = require('./Routes/Routes')
+ const cors = require("cors");
 app.use('/', apiRoutes)
 
 const uri = mongoose.connect(
@@ -14,7 +15,7 @@ const uri = mongoose.connect(
         useUnifiedTopology: true
     },
 )
-
+app.use(cors())
 app.listen(PORT, "127.0.0.1",() => {
         try {
             console.log(`Server started on port ${PORT}`)
