@@ -6,11 +6,15 @@ const controller = require('../Controllers/authController')
 const {
     registration,
     login,
-    getUsers
+    getTaskList,
+    addTask,
+    deleteTask
 } = require('../Controllers/authController')
 
 router.post('/registration', registration)
 router.post('/login', login)
-router.get('/users', getUsers)
+router.post('/addTask', addTask)
+router.post('/tasks', getTaskList)
+router.post('/delete', deleteTask)
 
 module.exports = router
