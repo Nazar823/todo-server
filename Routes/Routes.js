@@ -1,6 +1,7 @@
 const Router = require('express')
 const router = new Router
 const controller = require('../Controllers/authController')
+const authMiddleware = require('../middleware/authMiddleware')
 
 
 const {
@@ -14,7 +15,7 @@ const {
 router.post('/registration', registration)
 router.post('/login', login)
 router.post('/addTask', addTask)
-router.post('/tasks', getTaskList)
+router.get('/tasks',authMiddleware, getTaskList)
 router.post('/delete', deleteTask)
 
 module.exports = router

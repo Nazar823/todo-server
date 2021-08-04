@@ -47,7 +47,7 @@ module.exports.addTask = async (req, res, next) => {
         const {user, text, checked} = req.body
         const task = new Task ({user, text, checked})
         await task.save()
-        return res.status(200).json({message: task})
+        return res.status(200).json({id: task._id, text: task.text, checked: task.checked})
     } catch (error){
         return next(error)
     }
