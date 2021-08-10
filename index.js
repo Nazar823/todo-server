@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 const app = express()
 app.use(express.json())
 const apiRoutes = require('./Routes/Routes')
- const cors = require("cors");
+const cors = require("cors");
 app.use('/', apiRoutes)
 
 const uri = mongoose.connect(
@@ -16,7 +16,7 @@ const uri = mongoose.connect(
     },
 )
 app.use(cors())
-app.listen(PORT, "127.0.0.1",() => {
+app.listen(PORT,() => {
         try {
             console.log(`Server started on port ${PORT}`)
         } catch (e) {
