@@ -11,15 +11,18 @@ const {
     getTaskList,
     addTask,
     deleteTask,
-    checkTask
+    checkTask,
+    deleteCheckedTasks,
+    checkAllTasks
 } = require('../Controllers/taskController')
-
 
 router.post('/api/registration', registration)
 router.post('/api/login', login)
  router.post('/api/addTask', addTask)
 router.post('/api/tasks',  getTaskList)
 router.post('/api/delete', deleteTask)
-router.post('api/check', checkTask)
+router.post('/api/deleteChecked', deleteCheckedTasks)
+router.post('/api/check', checkTask)
+router.post('/api/checkAll', checkAllTasks)
 
 module.exports = router

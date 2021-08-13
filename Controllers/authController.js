@@ -10,7 +10,7 @@ module.exports.registration = async (req, res, next) => {
         const candidate = await User.findOne({username})
         if (candidate){
             // console.log('Пользователь с таким именем уже существует!')
-            return res.status(400).send('Пользователь с таким именем уже существует')
+            return res.status(400).json({message: 'Пользователь с таким именем уже существует'})
         }
         const hasPass = bcrypt.hashSync(password, 8)
         const  user = new User({nickname, username, password: hasPass})
@@ -30,10 +30,7 @@ function getToken(id) {
 }
 module.exports.login = async (req, res, next) => {
     try {
-        // return res.status(200).json ({msg: 'This is CORS-enabled for a Single Route'})
         const {username, password} = req.body
-        console.log('user data: ', username, password)
-        return res.status(200).json({username, password})
         const user = await User.findOne({username})
         if (!user){
             return res.status(400).json({message: 'Пользователь не найден!'})
