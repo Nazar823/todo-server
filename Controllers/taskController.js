@@ -35,7 +35,7 @@ module.exports.checkTask = async (req, res, next) => {
             return res.status(400).json({message: 'Такой таски не существует!'})
         }
         await Task.updateOne({_id: id}, {$set: {checked: !task.checked}})
-        return res.status(200).json({message: 'Updated!'})
+        return res.status(200)
     } catch (error) {
         console.log('ERROR')
         return next(error)
