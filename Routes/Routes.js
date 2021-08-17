@@ -18,11 +18,11 @@ const {
 
 router.post('/api/registration', registration)
 router.post('/api/login', login)
- router.post('/api/addTask', addTask)
-router.post('/api/tasks',  getTaskList)
-router.post('/api/delete', deleteTask)
-router.post('/api/deleteChecked', deleteCheckedTasks)
-router.post('/api/check', checkTask)
-router.post('/api/checkAll', checkAllTasks)
+ router.post('/api/addTask', authMiddleware, addTask)
+router.post('/api/tasks', authMiddleware,  getTaskList)
+router.post('/api/delete', authMiddleware, deleteTask)
+router.post('/api/deleteChecked', authMiddleware, deleteCheckedTasks)
+router.post('/api/check', authMiddleware, checkTask)
+router.post('/api/checkAll', authMiddleware, checkAllTasks)
 
 module.exports = router

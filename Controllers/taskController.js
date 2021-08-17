@@ -37,7 +37,7 @@ module.exports.checkTask = async (req, res, next) => {
             return res.status(400).json({message: 'Такой таски не существует!'})
         }
         await Task.updateOne({_id: id}, {$set: {checked: !task.checked}})
-        return res.status(200)
+        return res.status(200).json({message: 'Checked!'})
     } catch (error) {
         console.log('ERROR')
         return next(error)
@@ -64,7 +64,7 @@ module.exports.deleteTask = async (req, res, next) => {
             return res.status(400).json({message: 'Такой таски не существует!'})
         }
         await Task.deleteOne({_id: id})
-        return res.status(200).json({message: 'Updated!'})
+        return res.status(200).json({message: 'Deleted!'})
     } catch (error) {
         return next(error.message)
     }
