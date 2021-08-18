@@ -1,21 +1,21 @@
 const jwt = require("jsonwebtoken");
+const {body} = require("express-validator");
 
 module.exports = function (req, res, next) {
     if(req.method === "OPTIONS"){
         next()
     }
     try {
-        const {token} = req.body
+        const token = req.headers.authorization
             // .split(' ')[1]
-        console.log('TOKEN: ', token)
         if(!token){
             return res.status(403).json({message: `Пользователь не авторизован токен ${token}`})
         }
         const decode = jwt.verify(token, 'jdsdsj')
-        console.log('decode', decode)
-        req.user = decode
+        req.body = {...req.body, user: decode.id}
         next()
     } catch (e){
+        console.log(e.message)
         return res.json(e.message)
     }
 }

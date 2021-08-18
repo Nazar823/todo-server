@@ -18,7 +18,7 @@ const {
 
 router.post('/api/registration', registration)
 router.post('/api/login', login)
- router.post('/api/addTask', authMiddleware, addTask)
+router.post('/api/addTask', authMiddleware, addTask)
 router.post('/api/tasks', authMiddleware,  getTaskList)
 router.post('/api/delete', authMiddleware, deleteTask)
 router.post('/api/deleteChecked', authMiddleware, deleteCheckedTasks)

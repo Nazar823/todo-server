@@ -40,14 +40,8 @@ module.exports.login = async (req, res, next) => {
             return res.status(400).json({message: 'Пароль неправильный!'})
         }
         const token = getToken(user._id)
-        const userForResp = {
-            id: user._id,
-            username: user.username,
-            nickname: user.nickname
-        }
-        return res.status(200).json ({token, user: userForResp})
+        return res.status(200).json ({token})
     } catch (error) {
-        console.log(error.message)
         return next(error)
     }
 }

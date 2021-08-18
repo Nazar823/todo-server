@@ -7,8 +7,6 @@ const Task = require("../Objects/Task");
 module.exports.addTask = async (req, res, next) => {
     try {
         const {user, text} = req.body
-        console.log('************************')
-        console.log('user: ', user, ' text: ', text)
         const task = new Task({user, text, checked: false})
         await task.save()
         return res.status(200).json({id: task._id})
@@ -39,7 +37,6 @@ module.exports.checkTask = async (req, res, next) => {
         await Task.updateOne({_id: id}, {$set: {checked: !task.checked}})
         return res.status(200).json({message: 'Checked!'})
     } catch (error) {
-        console.log('ERROR')
         return next(error)
     }
 }
@@ -58,7 +55,6 @@ module.exports.checkAllTasks = async (req, res, next) => {
 }
 module.exports.deleteTask = async (req, res, next) => {
     try {
-        console.log('**********DELETING*********')
         const {id} = req.body
         if (!await Task.findOne({_id: id})){
             return res.status(400).json({message: 'Такой таски не существует!'})
