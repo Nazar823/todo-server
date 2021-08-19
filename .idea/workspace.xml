@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="252edfc3-2660-4105-8963-1c7e717aa5dd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/authController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/authController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/taskController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/taskController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Routes/Routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/Routes/Routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middleware/authMiddleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/authMiddleware.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +78,8 @@
       <workItem from="1628835706264" duration="15069000" />
       <workItem from="1629093199603" duration="8811000" />
       <workItem from="1629182296285" duration="12416000" />
-      <workItem from="1629265253567" duration="10511000" />
+      <workItem from="1629265253567" duration="10740000" />
+      <workItem from="1629350841726" duration="1834000" />
     </task>
     <servers />
   </component>
